@@ -265,6 +265,12 @@ public class ZohoSalesIQPlugin extends CordovaPlugin{
           if (action.equals("setVisitorLocation")) {
               this.setVisitorLocation((JSONObject)data.get(0));
           }
+          if (action.equals("handleNotification")) {
+              this.handleNotification(this.cordova.getActivity().getApplication(), (Map)data.getJSONObject(0), callbackContext);
+          }
+          if (action.equals("enablePush")) {
+              this.enablePush(data.getString(0), data.getBoolean(1));
+          }
           return true;
       }
       return false;
