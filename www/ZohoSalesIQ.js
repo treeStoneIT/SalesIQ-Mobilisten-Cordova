@@ -257,6 +257,14 @@
         exec(success, error, serviceName, 'openArticle', [articleID]);         // No I18N
     };
 
+    // INTEGRATION WITH FIREBASE
+    exports.handleNotification = function(message, success, error) {
+        exec(success, error, serviceName, 'handleNotification', [message]);
+    };
+    exports.enablePush = function(token, testDevice, success, error) {
+        exec(success, error, serviceName, 'enablePush', [token, testDevice]);
+    };    
+
     //MARK:- EVENT HANDLER WORKING PROTOTYPE
     var listeners = {};
 
